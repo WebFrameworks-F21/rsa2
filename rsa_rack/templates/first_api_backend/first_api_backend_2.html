@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Second Page</title>
+  </head>
+  <body>
+    <h1>Here are the racks: </h1>
+    {% if second_page_key %}
+      <ol>
+        {% for space in second_page_key %}
+          <li>Rack Info</li>
+          <ul>
+            <li>Rack ID: {{space.id}}</li>
+            <li>Rack Size: {{space.size}}</li>
+            <li>Rack Location: {{space.location}}</li>
+          </ul>
+        {% endfor %}
+      </ol>
+    {% endif %}
+  </body>
+</html>
