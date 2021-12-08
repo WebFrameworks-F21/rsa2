@@ -1,22 +1,177 @@
+
 <!DOCTYPE html>
+{% load static %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Second Page</title>
+    <link rel="stylesheet" href={% static 'css/style.css' %}/>
   </head>
   <body>
-    <h1>Here are the racks: </h1>
-    {% if second_page_key %}
-      <ol>
-        {% for space in second_page_key %}
-          <li>Rack Info</li>
-          <ul>
-            <li>Rack ID: {{space.id}}</li>
-            <li>Rack Size: {{space.size}}</li>
-            <li>Rack Location: {{space.location}}</li>
-          </ul>
-        {% endfor %}
-      </ol>
+    <h3>Here are the racks: </h3>
+    {% if second_page_rack_key %}
+    <table>
+      <tr>
+        <th>Rack ID</th>
+        <th>Rack Size</th>
+        <th>Rack Location</th>
+      </tr>
+      {% for i in second_page_rack_key %}
+      <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.size}}</td>
+        <td>{{i.location}}</td>
+      </tr>
+      {% endfor %}
+    </table>
     {% endif %}
+    <br>
+    <!-- <img src="{% static 'images/nasa.jpg'%}" alt="nasa"> -->
+    <h3>Here are the router: </h3>
+    {% if second_page_router_key %}
+    <table>
+      <tr>
+        <th>Router ID</th>
+        <th>Rack ID</th>
+        <th>Router Size</th>
+      </tr>
+      {% for i in second_page_router_key %}
+      <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.rack_id}}</td>
+        <td>{{i.size}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+    <br>
+
+    <h3>Here are the ipv4 networks: </h3>
+    {% if second_page_ipv4_network_key %}
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>IP Range</th>
+        <th>IP Address</th>
+      </tr>
+      {% for i in second_page_ipv4_network_key %}
+      <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.ip_range}}</td>
+        <td>{{i.ip_address}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+    <br>
+
+    <h3>Here are the Switch: </h3>
+    {% if second_page_switch_key %}
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Rack ID</th>
+        <th>Router ID</th>
+        <th>Switch Size</th>
+        <th>Network Name</th>
+      </tr>
+      {% for i in second_page_switch_key %}
+      <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.rack_id}}</td>
+        <td>{{i.router_id}}</td>
+        <td>{{i.size}}</td>
+        <td>{{i.network_name}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+    <br>
+
+    <h3>Here are the Patch Panel: </h3>
+    {% if second_page_patch_panel_key %}
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Size</th>
+        <th>Rack ID</th>
+        <th>Switch ID</th>
+        <th>Number of Ports</th>
+      </tr>
+      {% for i in second_page_patch_panel_key %}
+      <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.size}}</td>
+        <td>{{i.rack_id}}</td>
+        <td>{{i.switch_id}}</td>
+        <td>{{i.number_of_ports}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+    <br>
+
+
+    <h3>Here are the Servers: </h3>
+    {% if second_page_server_key %}
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Size</th>
+        <th>Rack ID</th>
+        <th>Patch Panel ID</th>
+        <th>Owner</th>
+      </tr>
+      {% for i in second_page_server_key %}
+      <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.size}}</td>
+        <td>{{i.rack_id}}</td>
+        <td>{{i.patch_panel_id}}</td>
+        <td>{{i.owner}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+    <br>
+
+    <h3>Here are the Battery Backup: </h3>
+    {% if second_page_battery_backup_key %}
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Rack ID</th>
+        <th>Size</th>
+      </tr>
+      {% for i in second_page_battery_backup_key %}
+      <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.rack_id}}</td>
+        <td>{{i.size}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+    <br>
+
+    <h3>Here are the Network Interface Cards: </h3>
+    {% if second_page_network_interface_card_key %}
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Server Id ID</th>
+        <th>IP Address</th>
+      </tr>
+      {% for i in second_page_network_interface_card_key %}
+      <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.server_id}}</td>
+        <td>{{i.ip_address}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+    <br>
+
   </body>
 </html>
