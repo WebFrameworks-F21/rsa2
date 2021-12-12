@@ -19,7 +19,8 @@ from first_api_backend import views
 from django.conf.urls import url, include
 
 urlpatterns = [
-    url(r'^$', views.index, name = 'index'),
+    #url(r'^$', views.index, name = 'index'),
     path('admin/', admin.site.urls),
-    url(r'^second_page/', include('first_api_backend.urls')),
+    #url(r'^second_page/', include('first_api_backend.urls')),
+    path('', include('first_api_backend.urls')),
 ]
