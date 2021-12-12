@@ -6,6 +6,7 @@ def index(request):
     return render(request, 'first_api_backend/first_api_backend_index.html')
 
 def second_page(request):
+    second_page_location_list = Location.objects.order_by('name')
     second_page_rack_list = Rack.objects.order_by('id')
     second_page_router_list = Router.objects.order_by('id')
     second_page_ipv4_network_list = ipv4_network.objects.order_by('name')
