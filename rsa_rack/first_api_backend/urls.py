@@ -5,7 +5,7 @@ from first_api_backend import views
 
 router = routers.DefaultRouter()
 router.register(r'racks', views.RackViewSet)
-router.register(r'locations', views.LocationViewSet)
+#router.register(r'locations', views.LocationViewSet)
 router.register(r'router', views.RouterViewSet)
 router.register(r'ipv4', views.ipv4_networkViewSet)
 router.register(r'switch', views.SwitchViewSet)

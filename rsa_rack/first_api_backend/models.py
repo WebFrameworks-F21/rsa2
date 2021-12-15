@@ -16,7 +16,7 @@ class Location(models.Model):
     location_name = models.CharField(max_length =200, unique= True)
 
     def __str__(self):
-        return f'{str(self.location_name)} location of the Rack {self.rack_id} is used.'
+        return f'{str(self.location_name)} location of the {self.rack_id} is used.'
 
 
 class Router(Location):
